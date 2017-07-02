@@ -9,20 +9,32 @@ import Voting from '../../src/components/Voting';
 
 describe('Voting', () => {
 
-  it('renders a pair of buttons', () => {
+  let wrapper;
+  let buttons;
 
+  beforeEach("wrapper prop setup", () => {
     const props = {
       pair: ["Trainspotting", "28 Days Later"]
     };
+    wrapper = shallow(<Voting {...props} />);
+  });
 
-    const component = shallow(<Voting {...props} />
-    );
-
-    const buttons = component.find('button');
+  it('renders a pair of buttons', () => {
+    buttons = wrapper.find('button');
     expect(buttons.length).to.equal(2);
     expect(buttons.at(0).text()).to.equal('Trainspotting');
     expect(buttons.at(1).text()).to.equal('28 Days Later');
+  });
 
+  it("invokes callback when button is clicked", () => {
+    let voteChoice;
+    const vote = (entry) => voteChoice = entry;
+
+    wrapper.setProps({ vote })
+    const button = wrapper.find('button').at(0);
+    button.simulate('click');
+
+    expect(voteChoice).to.equal('Trainspotting')
   });
 
 });
