@@ -18,7 +18,10 @@ describe('Voting', () => {
     const component = shallow(<Voting {...props} />
     );
 
-    expect(component.find('button').length).to.equal(2);
+    const buttons = component.find('button');
+    expect(buttons.length).to.equal(2);
+    expect(buttons.at(0).text()).to.equal('Trainspotting');
+    expect(buttons.at(1).text()).to.equal('28 Days Later');
 
   });
 
