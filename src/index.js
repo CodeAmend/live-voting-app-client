@@ -11,6 +11,6 @@ const pair = ['Trainspotting', '28 Days'];
 
 // Hello dude
 ReactDOM.render(
-  <Voting pair={pair} winner={'Trainspotting'}/>,
+  <Voting pair={pair} />,
   document.getElementById('root')
 );
