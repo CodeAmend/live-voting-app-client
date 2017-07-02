@@ -2,10 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => <div>I'm alive!</div>;
+// Components
+import Voting from './components/Voting';
+
+// Props
+const pair = ['Trainspotting', '28 Days'];
 
 // Hello dude
 ReactDOM.render(
-  <App />,
+  <Voting pair={pair} />,
   document.getElementById('root')
 );
