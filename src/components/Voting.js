@@ -7,12 +7,7 @@ import Winner from './Winner';
 
 
 export default (props) => {
-
-  const { pair, hasVoted, vote, winner} = props;
-  const getPair = () => pair;
-  const hasVotedFor = (entry) => hasVoted === entry;
-  const isDisabled = () => !!hasVoted;
-
+  const { winner } = props;
   return (
     <div className="voting">
       {winner ?
