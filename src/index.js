@@ -2,18 +2,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter,
-  hashHistory
+  HashRouter,
 } from 'react-router-dom';
 
 // Components
 import App from './components/App';
 
-
-
 ReactDOM.render(
-  <BrowserRouter history={hashHistory}>
+  <HashRouter>
     <App />
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
