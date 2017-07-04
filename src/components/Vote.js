@@ -2,8 +2,6 @@
 import React from 'react';
 
 
-
-
 export default ({pair, vote, hasVoted}) => {
 
   const getPair = () => pair;

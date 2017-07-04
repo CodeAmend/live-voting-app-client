@@ -10,6 +10,7 @@ import Voting from '../../src/components/Voting';
 import Vote from '../../src/components/Vote';
 import Winner from '../../src/components/Winner';
 
+
 describe('Voting', () => {
 
   let wrapper;

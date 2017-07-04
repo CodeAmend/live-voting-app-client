@@ -1,16 +1,19 @@
 // Modules
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  hashHistory
+} from 'react-router-dom';
 
 // Components
-import Voting from './components/Voting';
+import App from './components/App';
 
 
-// Props
-const pair = ['Trainspotting', '28 Days'];
 
-// Hello dude
 ReactDOM.render(
-  <Voting pair={pair} />,
+  <BrowserRouter history={hashHistory}>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
