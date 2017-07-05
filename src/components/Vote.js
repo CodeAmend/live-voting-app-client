@@ -3,7 +3,6 @@ import React from 'react';
 
 
 export default ({pair, vote, hasVoted}) => {
-
   const getPair = () => pair;
   const hasVotedFor = (entry) => hasVoted === entry;
   const isDisabled = () => !!hasVoted;

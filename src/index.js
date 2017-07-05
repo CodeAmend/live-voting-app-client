@@ -12,14 +12,17 @@ import App from './components/App';
 // reducers
 import reducer from './reducer';
 
-console.log(location);
+// Actions
+import { setState } from './action_creators';
+
+
 const socket = io(`${location.protocol}//${location.hostname}:8090`)
 
 const store = createStore(reducer);
 
-socket.on('state', (state) => store.dispatch(
-  { type: 'SET_STATE', state }
-));
+socket.on('state', state =>
+ store.dispatch( setState(state) )
+);
 
 store.dispatch({
   type: 'SET_STATE',

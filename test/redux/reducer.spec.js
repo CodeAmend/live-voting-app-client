@@ -40,6 +40,7 @@ describe('reducer', () => {
   });
 
   it("handles SET_STATE with vanilla JavaScript", () => {
+
     const initialState = Map();
     const action = {
       type: 'SET_STATE',
@@ -60,10 +61,10 @@ describe('reducer', () => {
       }
     }));
 
-
   });
-
+  
   it("removes hasVoted on new SET_STATE", () => {
+
     const initialState = fromJS({
       vote: {
         pair: ['Trainspotting', '28 Days Later'],
