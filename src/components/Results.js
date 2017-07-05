@@ -21,6 +21,12 @@ export default (props) => {
           </div>
         </div>
       )}
+      <div className="management">
+        <button className="next"
+                onClick={props.next}>
+          Next
+        </button>
+      </div>
     </div>
   );
 }
