@@ -6,7 +6,7 @@ import chaiEnzyme from 'chai-enzyme';
 chai.use(chaiEnzyme);
 
 // Components
-import Voting from '../../src/components/Voting';
+import { Voting } from '../../src/components/Voting';
 import Vote from '../../src/components/Vote';
 import Winner from '../../src/components/Winner';
 

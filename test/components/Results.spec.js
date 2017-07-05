@@ -5,7 +5,7 @@ import chaiEnzyme from 'chai-enzyme';
 chai.use(chaiEnzyme);
 
 import {List, Map} from 'immutable';
-import Results from '../../src/components/Results';
+import { Results } from '../../src/components/Results';
 
 describe('Results', () => {
 
