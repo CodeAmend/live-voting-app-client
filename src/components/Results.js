@@ -1,7 +1,9 @@
 // Modules
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default (props) => {
+
+export const Results = (props) => {
 
   const getPair = () => props.pair || [];
 
@@ -30,3 +32,14 @@ export default (props) => {
     </div>
   );
 }
+
+
+function mapStateToProps(state) {
+  return {
+    tally: state.getIn(['vote', 'tally']),
+    pair: state.getIn(['vote', 'pair']),
+    winner: state.get('winner')
+  }
+}
+
+export const ResultsContainer = connect(mapStateToProps)(Results);
