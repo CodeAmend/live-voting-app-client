@@ -1,13 +1,16 @@
 // Modules
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import io from 'socket.io-client';
 
 // Components
 import App from './components/App';
+
+// Middleware
+import remoteActionMiddleware from './remote_action_middleware';
 
 // reducers
 import reducer from './reducer';
@@ -18,7 +21,11 @@ import { setState } from './action_creators';
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`)
 
-const store = createStore(reducer);
+const createStoreWithMiddleware = applyMiddleware(
+  remoteActionMiddleware
+)(createStore);
+
+const store = createStoreWithMiddleware(reducer);
 
 socket.on('state', state =>
  store.dispatch( setState(state) )
