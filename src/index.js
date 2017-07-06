@@ -22,7 +22,7 @@ import { setState } from './action_creators';
 const socket = io(`${location.protocol}//${location.hostname}:8090`)
 
 const createStoreWithMiddleware = applyMiddleware(
-  remoteActionMiddleware
+  remoteActionMiddleware(socket)
 )(createStore);
 
 const store = createStoreWithMiddleware(reducer);
